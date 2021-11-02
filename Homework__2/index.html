@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework__2</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,5,6,7,8,9,10]; // задал массив чисел от 1 до 10
+        alert(`Исходный массив: ${array}`);
+        const Increment = (arr) => { // создаем стрелочную ф-цию
+            for (let i = 0; i < arr.length; i++) { // через цикл увеличиваем каждый элемент массива на 1
+                arr[i]++
+            }
+
+            return arr; // возвращаем сам массив
+        }
+
+        alert(`Массив увеличенный на единицу: ${Increment(array)}`); // вызываем функцию и выводим массив
+
+
+    </script>
+</body>
+</html>
