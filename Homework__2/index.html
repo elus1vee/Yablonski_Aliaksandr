@@ -21,9 +21,12 @@
 
         alert(`Массив увеличенный на единицу: ${Increment(array)}`); // вызываем функцию и выводим массив
         */
-        let array2 = array.map(item => ++item);
-        alert(`Массив увеличенный на единицу: ${array2}`);
-        alert(`Массив увеличенный еще на одну единицу: ${array2.map(item=>++item)}`);
+        const Increment = (arr) =>{
+            let arr2 = arr.map(item => ++item);
+
+            return arr2;
+        }
+        alert(`Массив увеличенный на единицу: ${Increment(array)}`);
 
     </script>
 </body>
