@@ -9,16 +9,23 @@
   <body>
     <script>
       array = [5, 7, [4, [2], 8, [1, 3], 2], [9, []], 1, 8];
-      let sum = 0;
-        
-      alert(`Наш массив выглядит так: ${array}`);
 
-      function Sum(arr) {
+      alert(`Наш массив выглядит так: ${array}`);
+      // let sum = 0;
+      /*function Sum(arr) {
+
         arr.forEach((item) => {
           Array.isArray(item) ? Sum(item) : (sum += item);
         });
 
         return sum;
+      }*/
+
+      function Sum(arr) {
+        let lastSum = arr.reduce((summ, item) => {
+          return summ + (Array.isArray(item) ? Sum(item) : item);
+        },0);
+        return lastSum;
       }
 
       alert(`Сумма нашего массива равна: ${Sum(array)}`);
