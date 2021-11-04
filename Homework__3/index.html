@@ -20,15 +20,18 @@
 
         return sum;
       }*/
-
-      function Sum(arr) {
+      /*function sum(arr) {
         let lastSum = arr.reduce((summ, item) => {
           return summ + (Array.isArray(item) ? Sum(item) : item);
         },0);
         return lastSum;
       }
+      */
 
-      alert(`Сумма нашего массива равна: ${Sum(array)}`);
+      const sum = arr => arr.reduce((result, item) => result + (Array.isArray(item) ? sum(item) : item), 0);
+
+      alert(`Сумма нашего массива равна: ${sum(array)}`);
+      
     </script>
   </body>
 </html>
