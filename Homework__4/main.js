@@ -1,6 +1,8 @@
 let str = prompt("Введите любую строку: ");
 
 function getVowels(strr) {
+    
+    strr = strr.toLowerCase();
   return function (x) {
     let counter = 0;
     if (x) {
@@ -23,6 +25,7 @@ let answer = confirm("Вы хотите найти конкретную глас
 
 if(answer){
     let vowel = prompt("Введите эту гласную:");
+    vowel = vowel.toLowerCase();
     alert(`Количество гласных "${vowel}" в строке: ${count(vowel)}`);
 }else{
     alert(`Количество ВСЕХ гласных в строке: ${count()}`);
