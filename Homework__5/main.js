@@ -17,7 +17,7 @@ let array = [
 function sumSalary(arr) {
   //если у человека ЗП не задана, то рандомно задаю:
   let arrNew = arr.map((item) => !Boolean(item.salary) ? (item.salary = Math.floor(Math.random() * 20) * 100 + 1000) : item.salary);
-  let summa = arr.reduce((sum, item) => (sum += item.salary), 0);
+  let summa = arrNew.reduce((sum, item) => (sum += item), 0);
   
   return summa;
 }
