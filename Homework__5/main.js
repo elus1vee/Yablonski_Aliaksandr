@@ -15,29 +15,29 @@ let array = [
 
 // Первый (лучше) вариант функции
 function sumSalary(arr) {
-  //если у человека ЗП не задана, то рандомно задаю:
-  let arrNew = arr.map((item) => !Boolean(item.salary) ? (item.salary = Math.floor(Math.random() * 20) * 100 + 1000) : item.salary);
-  let summa = arrNew.reduce((sum, item) => (sum += item), 0);
+  console.log("Результат первой функции:");
+  let summa = arr.reduce((sum, item) =>{
+    //если у человека ЗП не задана, то рандомно задаю: 
+    if(!Boolean(item.salary)){
+      item.salary = Math.floor(Math.random() * 20) * 100 + 1000;
+     }
+     sum +=item.salary;
+     return sum;
+    },0);
   
   return summa;
 }
 
-// Второй вариант функции
+//Второй вариант функции
 function sumSalaryV2(arr) {
   //если у человека ЗП не задана, то рандомно задаю:
   // НО так как первая функция вызвана раньше, она уже заполнила зарплаты, у кого их не было!
-  let arrNew = arr.map((item) => {
-    if (!Boolean(item.salary)) {
-      item.salary = Math.floor(Math.random() * 20) * 100 + 1000;
-    }
-    return {
-        name: item.name,
-        salary: item.salary
-    }
-  });
   let summa = 0;
-  
-  arrNew.forEach((object) => {
+  console.log("Результат второй функции:");
+  arr.forEach((object) => {
+    if (!Boolean(object.salary)) {
+         object.salary = Math.floor(Math.random() * 20) * 100 + 1000;
+    }
     for (const key in object) {
         if(key === "salary") {
             summa = summa + object[key];
