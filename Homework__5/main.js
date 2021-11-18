@@ -10,21 +10,21 @@ let array = [
   { name: "Oleg", salary: 1200 },
   { name: "Alexandr", salary: 1000 },
   { name: "Katya", salary: 1500 },
-  { name: "Volodya" }
+  { name: "Volodya" },
 ];
 
 // Первый (лучше) вариант функции
 function sumSalary(arr) {
   console.log("Результат первой функции:");
-  let summa = arr.reduce((sum, item) =>{
-    //если у человека ЗП не задана, то рандомно задаю: 
-    if(!Boolean(item.salary)){
+  let summa = arr.reduce((sum, item) => {
+    //если у человека ЗП не задана, то рандомно задаю:
+    if (!Boolean(item.salary)) {
       item.salary = Math.floor(Math.random() * 20) * 100 + 1000;
-     }
-     sum +=item.salary;
-     return sum;
-    },0);
-  
+    }
+    sum += item.salary;
+    return sum;
+  }, 0);
+
   return summa;
 }
 
@@ -36,12 +36,12 @@ function sumSalaryV2(arr) {
   console.log("Результат второй функции:");
   arr.forEach((object) => {
     if (!Boolean(object.salary)) {
-         object.salary = Math.floor(Math.random() * 20) * 100 + 1000;
+      object.salary = Math.floor(Math.random() * 20) * 100 + 1000;
     }
     for (const key in object) {
-        if(key === "salary") {
-            summa = summa + object[key];
-        }
+      if (key === "salary") {
+        summa = summa + object[key];
+      }
     }
   });
 
@@ -50,4 +50,3 @@ function sumSalaryV2(arr) {
 
 console.log(sumSalary(array));
 console.log(sumSalaryV2(array));
-
