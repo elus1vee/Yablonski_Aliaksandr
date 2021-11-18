@@ -10,7 +10,7 @@ const animals = [
 class Animal {
   constructor(name, color, age, voice) {
     this.name = name;
-    this.color = color;
+    this.color = color.toLowerCase();
     this.age = age;
     this.voice = voice;
   }
@@ -19,17 +19,24 @@ class Animal {
     console.log(`${this.name} издает звук: ${this.voice}`);
   }
   hello() {
-    let arr1 = [2, 3, 4];
-    if (arr1.includes(this.age % 10)) {
-      // тут я проверяю последнюю цифру возраста, чтобы правильно сказать: год,года,лет)
-      console.log(`Привет, я ${this.name}. Мне ${this.age} года. У меня ${this.color} окрас.`);
-    } else if (this.age % 10 === 1) {
-      console.log(`Привет, я ${this.name}. Мне ${this.age} год. У меня ${this.color} окрас.`);
+    let txt;
+    let count = this.age % 100;
+    if (count >= 5 && count <= 20) {
+      txt = "лет";
     } else {
-      console.log(`Привет, я ${this.name}. Мне ${this.age} лет. У меня ${this.color} окрас.`);
+      count %= 10;
+      if (count === 1) {
+        txt = "год";
+      } else if (count >= 2 && count <= 4) {
+        txt = "года";
+      } else {
+        txt = "лет";
+      }
     }
+    console.log(`Привет, я ${this.name}. Мне ${this.age} ${txt}. У меня ${this.color} окрас.`);
   }
-  getAge() { // геттер, чтобы вернуть возраст числом
+  getAge() {
+    // геттер, чтобы вернуть возраст числом
     return Number(this.age);
   }
 }
