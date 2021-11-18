@@ -18,38 +18,37 @@ class Animal {
   say() {
     console.log(`${this.name} издает звук: ${this.voice}`);
   }
-  hello() { 
-    let arr1 = [2,3,4];
-    if(arr1.includes(this.age % 10)){ // тут я проверяю последнюю цифру возраста, чтобы правильно сказать: год,года,лет)
+  hello() {
+    let arr1 = [2, 3, 4];
+    if (arr1.includes(this.age % 10)) {
+      // тут я проверяю последнюю цифру возраста, чтобы правильно сказать: год,года,лет)
       console.log(`Привет, я ${this.name}. Мне ${this.age} года. У меня ${this.color} окрас.`);
-    } else if(this.age%10 === 1) {
+    } else if (this.age % 10 === 1) {
       console.log(`Привет, я ${this.name}. Мне ${this.age} год. У меня ${this.color} окрас.`);
-    } else{
+    } else {
       console.log(`Привет, я ${this.name}. Мне ${this.age} лет. У меня ${this.color} окрас.`);
     }
   }
-  getAge(){ // геттер, чтобы вернуть возраст числом
+  getAge() { // геттер, чтобы вернуть возраст числом
     return Number(this.age);
   }
 }
 function animalsFabric(animals) {
-  
-  let objectAnimals = animals.map(item => item = new Animal(item.name,item.color,item.age,item.voice))
+  let objectAnimals = animals.map((item) => (item = new Animal(item.name, item.color, item.age, item.voice)));
   return objectAnimals;
 }
 //функция для возврата суммы всех возрастов
 function getAllAge(animals) {
-  let allAge = animals.reduce((sum,item)=> sum + item.getAge(),0)
+  let allAge = animals.reduce((sum, item) => sum + item.getAge(), 0);
   return allAge;
 }
-
 
 let animalsObject = animalsFabric(animals);
 
 //Выводим на экран звуки каждого животного:
-animalsObject.forEach(element => {
+animalsObject.forEach((element) => {
   element.hello();
-  element.say(); 
+  element.say();
 });
 
 console.log(`Сумма возрастов всех животных: ${getAllAge(animalsObject)}`);
