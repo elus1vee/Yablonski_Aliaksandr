@@ -5,11 +5,9 @@ function getVowels(x) {
   let counter = 0;
   let arr = strr.split("");
   let arrVowels = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
-  if (arrVowels.includes(x)) {
-    counter = arr.reduce((sum, item) => (item === x ? ++sum : sum), 0);
-  } else {
-    counter = arr.reduce((sum, item) => sum + arrVowels.includes(item), 0);
-  }
+  arrVowels.includes(x)
+    ? (counter = arr.reduce((sum, item) => (item === x ? ++sum : sum), 0))
+    : (counter = arr.reduce((sum, item) => sum + arrVowels.includes(item), 0));
   return counter;
 }
 function checkVowel(x) {
