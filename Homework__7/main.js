@@ -1,17 +1,7 @@
 String.prototype.getVowels = getVowels;
-let key = 1;
-//Проверка на строку
-do {
-  var str = prompt("Введите любую строку: ");
-  if (!(typeof str === "string")) {
-    alert("ERROR! Введите строку!");
-  }
-  key = 0;
-} while (key);
 
 function getVowels(x) {
   let strr = this.toLowerCase();
-  //return function (x) {
   let counter = 0;
   let arr = strr.split("");
   let arrVowels = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
@@ -22,20 +12,27 @@ function getVowels(x) {
   }
   return counter;
 }
-
 function checkVowel(x) {
   let arrVowels = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
-  if (arrVowels.includes(x)) {
-    return true;
-  }
-  return false;
+  return arrVowels.includes(x);
 }
+
+let key = 1;
+//Проверка на строку
+do {
+  var str = prompt("Введите любую строку: ");
+  if (!(typeof str === "string")) {
+    alert("ERROR! Введите строку!");
+  }
+  key = 0;
+} while (key);
+
 let answer = confirm("Вы хотите найти конкретную гласную?");
 
 if (answer) {
   let vowel = prompt("Введите эту гласную:");
   vowel = vowel.toLowerCase();
-  
+
   //Проверка на количество символов
   if (vowel.length > 1) {
     alert("Вы ввели не одну букву!");
