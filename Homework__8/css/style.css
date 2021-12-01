@@ -38,4 +38,8 @@ footer {
 .header__a:hover, .footer__a:hover {
   color: rgba(224, 33, 137, 0.85);
   background: url("../img/arrow-28-16\ pink.png") left no-repeat;
+  font-size: 3em;
+}
+.footer__a:hover {
+  transition: .2s;
 }
