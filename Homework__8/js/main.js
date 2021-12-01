@@ -32,3 +32,40 @@ a.forEach((item, index) => {
   item.href = headerArray[index].href;
   item.innerText = headerArray[index].name;
 });
+
+// footer logic
+
+const footerArray = [
+  { name: "VK", href: "http://vk.com" },
+  { name: "GitHub", href: "http://github.com" },
+  { name: "Pinterest", href: "http://pinterest.com" },
+  { name: "Yandex", href: "http://yandex.com" },
+  { name: "Instagram", href: "http://instagram.com" },
+];
+
+let footer = document.createElement("footer");
+let footerNav = document.createElement("nav");
+footerNav.className = "footer__nav";
+let footerUl = document.createElement("ul");
+footerUl.className = "footer__ul";
+let footerLi = [];
+for (let i = 0; i < headerArray.length; i++) {
+  footerLi[i] = document.createElement("li");
+  footerLi[i].className = "footer__li";
+}
+let footerA = [];
+for (let i = 0; i < footerArray.length; i++) {
+    footerA[i] = document.createElement("a");
+    footerA[i].className = "footer__a";
+}
+
+document.body.append(footer);
+document.getElementsByTagName("footer")[0].append(footerNav);
+document.getElementsByTagName("nav")[1].append(footerUl);
+
+footerLi.forEach((item) => document.getElementsByTagName("ul")[1].prepend(item));
+footerA.forEach((item, index) => {
+  document.getElementsByTagName("li")[index + headerArray.length].append(item);
+  item.href = footerArray[index].href;
+  item.innerText = footerArray[index].name;
+});
