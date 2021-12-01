@@ -35,7 +35,7 @@ footer {
   padding-left: 20px;
   font-size: 23px;
 }
-.header__a:hover, .footer_a:hover {
+.header__a:hover, .footer__a:hover {
   color: rgba(224, 33, 137, 0.85);
   background: url("../img/arrow-28-16\ pink.png") left no-repeat;
 }
