@@ -6,12 +6,27 @@ const headerArray = [
   { name: "Ebay", href: "http://ebay.com" },
 ];
 
+const footerArray = [
+  { name: "VK", href: "http://vk.com" },
+  { name: "GitHub", href: "http://github.com" },
+  { name: "Pinterest", href: "http://pinterest.com" },
+  { name: "Yandex", href: "http://yandex.com" },
+  { name: "Instagram", href: "http://instagram.com" }
+]
+
 const headerStyles = {
   nav: "header__nav",
   ul: "header__ul",
   li: "header__li",
   a: "header__a",
 };
+
+const footerStyles = {
+  nav: "footer__nav",
+  ul: "footer__ul",
+  li: "footer__li",
+  a: "footer__a"
+}
 
 function createNav(array, styles) {
   const nav = document.createElement("nav");
@@ -38,4 +53,10 @@ const header = document.createElement("header");
 document.body.append(header);
 const headerNav = createNav(headerArray, headerStyles);
 
+const footer = document.createElement("footer");
+document.body.append(footer);
+const footerNav = createNav(footerArray, footerStyles);
+
+
 header.append(headerNav);
+footer.append(footerNav);
