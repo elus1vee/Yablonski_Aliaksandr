@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import url(nullstyle.css);
+/* ------------------------------------------- */
+body {
+  background: url("../img/pattern-1638966042331-744.jpg") no-repeat;
+}
+
+.block {
+  margin: 100px;
+  width: 500px;
+  border: 3px solid rgb(241, 241, 153);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 20px;
+  background: rgba(61, 186, 202, 0.4);
+}
+p {
+  margin: 5px;
+}
+
+.title {
+  font-size: 23px;
+  font-weight: 800;
+  margin-top: 25px;
+}
+.title:first-child {
+  margin-top: 0px;
+}
+
+.text {
+  border: 1px solid black;
+  height: 27px;
+  width: 200px;
+  font-size: 23px;
+}
+
+.button {
+  margin-top: 30px;
+  background-color: rgb(129, 202, 231);
+  border: 1px solid rgb(25, 228, 211);
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+}
+.button:hover {
+  box-shadow: 0 0 4px rgb(85, 250, 20);
+}
